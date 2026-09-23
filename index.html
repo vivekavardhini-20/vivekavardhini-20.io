@@ -1,52 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Programs</title>
+
+    <title>CSS Practical Programs</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .home {
+            margin-bottom: 25px;
+        }
+
+        .home a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .program {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .program h2 {
+            color: #2563eb;
+            margin-top: 0;
+        }
+
+        .program p {
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>JavaScript Programs</h1>
+<header>
+    <h1>CSS Practical Programs</h1>
+    <p>CSS Experiments</p>
+</header>
 
-    <ol>
+<div class="container">
 
-        <li>
-            <a href="digital-calculator.html">
-                Digital Calculator
-            </a>
-        </li>
+    <div class="home">
+        <a href="../index.html">← Back to Home</a>
+    </div>
 
-        <li>
-            <a href="digital-clock.html">
-                Digital Clock
-            </a>
-        </li>
+    <div class="program">
+        <h2>Experiment 1</h2>
+        <p>Demonstrate inline, internal and external CSS.</p>
+        <a href="1css.html" class="btn">Open Program</a>
+    </div>
 
-        <li>
-            <a href="stopwatch.html">
-                Stopwatch
-            </a>
-        </li>
+    <div class="program">
+        <h2>Experiment 2</h2>
+        <p>Demonstrate different CSS selectors.</p>
+        <a href="2css.html" class="btn">Open Program</a>
+    </div>
 
-        <li>
-            <a href="countdown-timer.html">
-                Countdown Timer
-            </a>
-        </li>
+    <div class="program">
+        <h2>Experiment 3</h2>
+        <p>Demonstrate colors, backgrounds and borders.</p>
+        <a href="3css.html" class="btn">Open Program</a>
+    </div>
 
-        <li>
-            <a href="todo-list.html">
-                To-Do List
-            </a>
-        </li>
+    <div class="program">
+        <h2>Experiment 4</h2>
+        <p>Demonstrate font properties and text formatting.</p>
+        <a href="4css.html" class="btn">Open Program</a>
+    </div>
 
-    </ol>
+    <div class="program">
+        <h2>Experiment 5</h2>
+        <p>Demonstrate the CSS box model.</p>
+        <a href="5css.html" class="btn">Open Program</a>
+    </div>
 
-    <br>
+    <div class="program">
+        <h2>Experiment 6</h2>
+        <p>Demonstrate width, height and sizing properties.</p>
+        <a href="6css.html" class="btn">Open Program</a>
+    </div>
 
-    <a href="../index.html">Home</a>
+    <div class="program">
+        <h2>Experiment 7</h2>
+        <p>Demonstrate static, relative, absolute, fixed and sticky positioning.</p>
+        <a href="7css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 8</h2>
+        <p>Demonstrate float and clear properties.</p>
+        <a href="8css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 9</h2>
+        <p>Create a styled navigation bar using CSS.</p>
+        <a href="9css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 10</h2>
+        <p>Demonstrate pseudo-classes such as hover, active, focus and visited.</p>
+        <a href="10css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 11</h2>
+        <p>Demonstrate pseudo-elements such as before, after, first-letter and first-line.</p>
+        <a href="11css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 12</h2>
+        <p>Style lists and tables using CSS.</p>
+        <a href="12css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 13</h2>
+        <p>Create a styled registration form using CSS.</p>
+        <a href="13css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 14</h2>
+        <p>Create layouts using Flexbox.</p>
+        <a href="14css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 15</h2>
+        <p>Create layouts using CSS Grid.</p>
+        <a href="15css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 16</h2>
+        <p>Create a responsive webpage using media queries.</p>
+        <a href="16css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 17</h2>
+        <p>Demonstrate CSS transitions and transformations.</p>
+        <a href="17css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 18</h2>
+        <p>Create CSS animations.</p>
+        <a href="18css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 19</h2>
+        <p>Create a responsive navigation menu.</p>
+        <a href="19css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 20</h2>
+        <p>Create a personal portfolio using CSS.</p>
+        <a href="20css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 21</h2>
+        <p>Create a college/student profile using CSS.</p>
+        <a href="21css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 22</h2>
+        <p>Create a login page using CSS.</p>
+        <a href="22css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 23</h2>
+        <p>Create a product card using CSS.</p>
+        <a href="23css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 24</h2>
+        <p>Create a responsive photo gallery.</p>
+        <a href="24css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 25</h2>
+        <p>Create a complete website homepage using CSS.</p>
+        <a href="25css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 26</h2>
+        <p>Demonstrate CSS inheritance and specificity.</p>
+        <a href="26css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 27</h2>
+        <p>Demonstrate universal, element, class, ID, attribute and grouping selectors.</p>
+        <a href="27css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 28</h2>
+        <p>Demonstrate descendant, child, adjacent sibling and general sibling selectors.</p>
+        <a href="28css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 29</h2>
+        <p>Demonstrate CSS variables.</p>
+        <a href="29css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 30</h2>
+        <p>Demonstrate background images and positioning.</p>
+        <a href="30css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 31</h2>
+        <p>Demonstrate linear and radial gradients.</p>
+        <a href="31css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 32</h2>
+        <p>Demonstrate box-shadow and text-shadow.</p>
+        <a href="32css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 33</h2>
+        <p>Create shapes using border-radius.</p>
+        <a href="33css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 34</h2>
+        <p>Demonstrate opacity and transparency.</p>
+        <a href="34css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 35</h2>
+        <p>Demonstrate overflow properties.</p>
+        <a href="35css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 36</h2>
+        <p>Demonstrate z-index and stacking.</p>
+        <a href="36css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 37</h2>
+        <p>Demonstrate block, inline, inline-block and none display values.</p>
+        <a href="37css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 38</h2>
+        <p>Demonstrate visibility and hiding elements.</p>
+        <a href="38css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 39</h2>
+        <p>Create a dropdown menu.</p>
+        <a href="39css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 40</h2>
+        <p>Create an image hover effect.</p>
+        <a href="40css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 41</h2>
+        <p>Create a tooltip using CSS.</p>
+        <a href="41css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 42</h2>
+        <p>Create a CSS-only button hover animation.</p>
+        <a href="42css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 43</h2>
+        <p>Demonstrate CSS filters such as blur, grayscale, brightness and contrast.</p>
+        <a href="43css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 44</h2>
+        <p>Demonstrate object-fit and object-position.</p>
+        <a href="44css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 45</h2>
+        <p>Create a responsive image gallery.</p>
+        <a href="45css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 46</h2>
+        <p>Create a card layout using Flexbox.</p>
+        <a href="46css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 47</h2>
+        <p>Create a dashboard using CSS Grid.</p>
+        <a href="47css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 48</h2>
+        <p>Create a two-column layout using CSS Grid.</p>
+        <a href="48css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 49</h2>
+        <p>Create a three-column layout using Flexbox.</p>
+        <a href="49css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 50</h2>
+        <p>Create a sticky header.</p>
+        <a href="50css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 51</h2>
+        <p>Create a fixed sidebar.</p>
+        <a href="51css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 52</h2>
+        <p>Create a responsive footer.</p>
+        <a href="52css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 53</h2>
+        <p>Create a responsive login and signup page.</p>
+        <a href="53css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 54</h2>
+        <p>Create a responsive contact form.</p>
+        <a href="54css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 55</h2>
+        <p>Create a responsive college homepage.</p>
+        <a href="55css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 56</h2>
+        <p>Create a restaurant webpage.</p>
+        <a href="56css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 57</h2>
+        <p>Create an online shopping webpage.</p>
+        <a href="57css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 58</h2>
+        <p>Create a travel homepage.</p>
+        <a href="58css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 59</h2>
+        <p>Create a news/blog layout using CSS Grid.</p>
+        <a href="59css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 60</h2>
+        <p>Create a portfolio with multiple sections.</p>
+        <a href="60css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 61</h2>
+        <p>Demonstrate Grid template areas.</p>
+        <a href="61css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 62</h2>
+        <p>Demonstrate Flexbox alignment and order.</p>
+        <a href="62css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 63</h2>
+        <p>Create a responsive Grid using media queries.</p>
+        <a href="63css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 64</h2>
+        <p>Create a mobile-first responsive webpage.</p>
+        <a href="64css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 65</h2>
+        <p>Demonstrate CSS transitions.</p>
+        <a href="65css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 66</h2>
+        <p>Demonstrate 2D and 3D transformations.</p>
+        <a href="66css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 67</h2>
+        <p>Create animations using CSS keyframes.</p>
+        <a href="67css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 68</h2>
+        <p>Create a loading spinner using CSS.</p>
+        <a href="68css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 69</h2>
+        <p>Create a sliding image or card animation.</p>
+        <a href="69css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 70</h2>
+        <p>Create a CSS-only modal or popup.</p>
+        <a href="70css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 71</h2>
+        <p>Create a dark mode using CSS variables.</p>
+        <a href="71css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 72</h2>
+        <p>Demonstrate responsive typography.</p>
+        <a href="72css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 73</h2>
+        <p>Demonstrate clamp(), min() and max().</p>
+        <a href="73css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 74</h2>
+        <p>Demonstrate the CSS calc() function.</p>
+        <a href="74css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 75</h2>
+        <p>
+            Create a complete responsive website using HTML5,
+            CSS3, Flexbox, Grid and media queries.
+        </p>
+        <a href="75css.html" class="btn">Open Program</a>
+    </div>
+
+</div>
 
 </body>
 </html>
