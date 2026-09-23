@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 25 - Website Homepage</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        header {
+            background-color: navy;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: lightblue;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        .hero button {
+            padding: 12px 25px;
+            background-color: navy;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .services {
+            display: flex;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .service {
+            flex: 1;
+            padding: 30px;
+            background-color: #eeeeee;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                text-align: center;
+            }
+
+            .services {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Website</h1>
+    <p>Welcome to my homepage</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</nav>
+
+<section class="hero">
+
+    <h1>Welcome!</h1>
+
+    <p>
+        This is a complete responsive homepage
+        created using HTML and CSS.
+    </p>
+
+    <button>Learn More</button>
+
+</section>
+
+<section class="services">
+
+    <div class="service">
+        <h2>Web Design</h2>
+        <p>Creating attractive websites.</p>
+    </div>
+
+    <div class="service">
+        <h2>Development</h2>
+        <p>Building functional web applications.</p>
+    </div>
+
+    <div class="service">
+        <h2>Responsive Design</h2>
+        <p>Websites that work on all devices.</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 My Website</p>
+</footer>
+
+<br>
+
+<center>
+    <a href="index.html">Back to CSS Programs</a>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    form {
+        width: 350px;
+        margin: auto;
+        padding: 25px;
+        background-color: lightblue;
+        border-radius: 10px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: darkgreen;
+    }
+</style>
+</head>
+<body>
+
+<form>
+    <h2>Registration Form</h2>
+
+    <input type="text" placeholder="Name">
+
+    <input type="email" placeholder="Email">
+
+    <input type="password" placeholder="Password">
+
+    <select>
+        <option>Select Course</option>
+        <option>CSE</option>
+        <option>ECE</option>
+        <option>EEE</option>
+    </select>
+
+    <input type="submit" value="Register">
+</form>
+
+</body>
+</html>

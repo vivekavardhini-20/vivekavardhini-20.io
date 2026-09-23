@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clamp Min Max</title>
+
+    <style>
+        h1 {
+            font-size: clamp(25px, 5vw, 60px);
+        }
+
+        .box {
+            width: min(80%, 500px);
+            padding: 30px;
+            background: lightblue;
+        }
+
+        .text {
+            width: max(200px, 50%);
+            background: lightgreen;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Clamp, Min and Max</h1>
+
+    <div class="box">
+        This box uses min().
+    </div>
+
+    <div class="text">
+        This box uses max().
+    </div>
+
+</body>
+</html>

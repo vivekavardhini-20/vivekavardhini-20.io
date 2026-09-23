@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LCM</title>
+</head>
+
+<body>
+
+    <h1>LCM of Two Numbers</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let a = 12;
+        let b = 18;
+
+        let x = a;
+        let y = b;
+
+        while (y !== 0) {
+
+            let remainder = x % y;
+
+            x = y;
+            y = remainder;
+        }
+
+        let gcd = x;
+
+        let lcm = (a * b) / gcd;
+
+        document.getElementById("output").innerHTML =
+            "LCM of " + a + " and " + b + " = " + lcm;
+    </script>
+
+</body>
+</html>

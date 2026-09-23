@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regex Search</title>
+</head>
+
+<body>
+
+    <h1>Regular Expression Search</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let text = "Welcome to JavaScript programming.";
+
+        let pattern = /programming/i;
+
+        if (pattern.test(text)) {
+
+            document.getElementById("output").innerHTML =
+                "The word 'programming' was found.";
+
+        } else {
+
+            document.getElementById("output").innerHTML =
+                "The word was not found.";
+        }
+    </script>
+
+</body>
+</html>

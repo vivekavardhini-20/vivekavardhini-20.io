@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sliding Card Animation</title>
+
+    <style>
+        .card {
+            width: 250px;
+            padding: 30px;
+            background: lightblue;
+
+            animation: slide 3s infinite alternate;
+        }
+
+        @keyframes slide {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(300px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sliding Card</h1>
+
+    <div class="card">
+        <h2>Hello!</h2>
+        <p>This card slides using CSS animation.</p>
+    </div>
+
+</body>
+</html>

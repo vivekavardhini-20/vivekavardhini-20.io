@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merge Arrays</title>
+</head>
+
+<body>
+
+    <h1>Merge Two Arrays</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let array1 = [10, 20, 30];
+        let array2 = [40, 50, 60];
+
+        let mergedArray = [...array1, ...array2];
+
+        document.getElementById("output").innerHTML =
+            "Array 1 = " + array1 + "<br>" +
+            "Array 2 = " + array2 + "<br>" +
+            "Merged Array = " + mergedArray;
+    </script>
+
+</body>
+</html>

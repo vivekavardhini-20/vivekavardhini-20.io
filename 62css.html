@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Count</title>
+</head>
+
+<body>
+
+    <h1>Word Count</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let text = "JavaScript is easy to learn";
+
+        let words = text.trim().split(/\s+/);
+
+        document.getElementById("output").innerHTML =
+            "Sentence: " + text + "<br>" +
+            "Number of words = " + words.length;
+    </script>
+
+</body>
+</html>

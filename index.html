@@ -1,856 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Practical Assignment - Viveka Vardhini</title>
+
+    <title>CSS Practical Programs</title>
+
     <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --border-color: #e2e8f0;
-            --badge-html: #e34f26;
-            --badge-css: #1572b6;
-            --badge-js: #f7df1e;
-            --badge-node: #339933;
-        }
-
-        body.dark-mode {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-        }
-
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: background-color 0.25s, color 0.25s;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            padding: 2rem 1rem;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
         }
 
-        /* Student Metadata Header */
-        header {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            margin-bottom: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        .home {
+            margin-bottom: 25px;
         }
 
-        .student-details h1 {
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .student-details p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .theme-btn {
-            background-color: var(--border-color);
-            border: none;
-            color: var(--text-main);
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        /* Total Stats Summary */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.2rem;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .stat-card .count {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .stat-card .label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-
-        /* Filter & Search Bar */
-        .controls-panel {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.2rem;
-            margin-bottom: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .search-input {
-            flex: 1;
-            min-width: 280px;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            outline: none;
-        }
-
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .filter-btn {
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-color);
-            color: var(--text-muted);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .filter-btn.active {
-            background-color: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-        }
-
-        /* Sections Grid */
-        .category-section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.75rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .category-title {
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .badge {
-            font-size: 0.75rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 12px;
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        .badge-html { background-color: var(--badge-html); }
-        .badge-css { background-color: var(--badge-css); }
-        .badge-js { background-color: var(--badge-js); color: #000; }
-        .badge-node { background-color: var(--badge-node); }
-
-        /* Questions List */
-        .question-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1rem;
-        }
-
-        .question-card {
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
-            background-color: var(--bg-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 0.75rem;
-        }
-
-        .question-title {
-            font-size: 0.95rem;
-            line-height: 1.4;
-            color: var(--text-main);
-        }
-
-        .question-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            border-top: 1px dashed var(--border-color);
-            padding-top: 0.5rem;
-        }
-
-        .btn-view {
+        .home a {
+            color: #2563eb;
             text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.8rem;
         }
 
-        .btn-view:hover {
-            text-decoration: underline;
+        .program {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
+        .program h2 {
+            color: #2563eb;
+            margin-top: 0;
+        }
+
+        .program p {
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
         }
     </style>
 </head>
+
 <body>
 
+<header>
+    <h1>CSS Practical Programs</h1>
+    <p>CSS Experiments</p>
+</header>
+
 <div class="container">
-    <!-- Header with Student details -->
-    <header>
-        <div class="student-details">
-            <h1>Web Development Practical Repository</h1>
-            <p><strong>Student Name:</strong> Viveka Vardhini</p>
-            <p><strong>PRN / Register Number:</strong> 250200497 | <strong>Class / Section:</strong> Section 7</p>
-            <p><strong>Subject:</strong> Web Development (HTML, CSS, JS, Node.js)</p>
-        </div>
-        <div class="header-actions">
-            <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">Dark Mode</button>
-        </div>
-    </header>
 
-    <!-- Overall Statistics -->
-    <div class="stats-grid">
-        <div class="stat-card">
-            <div class="count">434</div>
-            <div class="label">Total Questions</div>
-        </div>
-        <div class="stat-card">
-            <div class="count">15</div>
-            <div class="label">HTML Programs</div>
-        </div>
-        <div class="stat-card">
-            <div class="count">75</div>
-            <div class="label">CSS Programs</div>
-        </div>
-        <div class="stat-card">
-            <div class="count">279</div>
-            <div class="label">JS & DOM Programs</div>
-        </div>
-        <div class="stat-card">
-            <div class="count">65</div>
-            <div class="label">Node.js Programs</div>
-        </div>
+    <div class="home">
+        <a href="../index.html">← Back to Home</a>
     </div>
 
-    <!-- Filtering Bar -->
-    <div class="controls-panel">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search across all 434 questions..." onkeyup="filterQuestions()">
-        <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterCategory('all', this)">All (434)</button>
-            <button class="filter-btn" onclick="filterCategory('html', this)">HTML (15)</button>
-            <button class="filter-btn" onclick="filterCategory('css', this)">CSS (75)</button>
-            <button class="filter-btn" onclick="filterCategory('js', this)">JavaScript (279)</button>
-            <button class="filter-btn" onclick="filterCategory('node', this)">Node.js (65)</button>
-        </div>
+    <div class="program">
+        <h2>Experiment 1</h2>
+        <p>Demonstrate inline, internal and external CSS.</p>
+        <a href="1css.html" class="btn">Open Program</a>
     </div>
 
-    <!-- Questions Content Container -->
-    <div id="questionsContainer"></div>
+    <div class="program">
+        <h2>Experiment 2</h2>
+        <p>Demonstrate different CSS selectors.</p>
+        <a href="2css.html" class="btn">Open Program</a>
+    </div>
 
-    <footer>
-        <p>&copy; 2026 Practical Assignment Portfolio | Student: Viveka Vardhini (PRN: 250200497, Sec 7)</p>
-    </footer>
+    <div class="program">
+        <h2>Experiment 3</h2>
+        <p>Demonstrate colors, backgrounds and borders.</p>
+        <a href="3css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 4</h2>
+        <p>Demonstrate font properties and text formatting.</p>
+        <a href="4css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 5</h2>
+        <p>Demonstrate the CSS box model.</p>
+        <a href="5css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 6</h2>
+        <p>Demonstrate width, height and sizing properties.</p>
+        <a href="6css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 7</h2>
+        <p>Demonstrate static, relative, absolute, fixed and sticky positioning.</p>
+        <a href="7css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 8</h2>
+        <p>Demonstrate float and clear properties.</p>
+        <a href="8css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 9</h2>
+        <p>Create a styled navigation bar using CSS.</p>
+        <a href="9css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 10</h2>
+        <p>Demonstrate pseudo-classes such as hover, active, focus and visited.</p>
+        <a href="10css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 11</h2>
+        <p>Demonstrate pseudo-elements such as before, after, first-letter and first-line.</p>
+        <a href="11css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 12</h2>
+        <p>Style lists and tables using CSS.</p>
+        <a href="12css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 13</h2>
+        <p>Create a styled registration form using CSS.</p>
+        <a href="13css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 14</h2>
+        <p>Create layouts using Flexbox.</p>
+        <a href="14css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 15</h2>
+        <p>Create layouts using CSS Grid.</p>
+        <a href="15css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 16</h2>
+        <p>Create a responsive webpage using media queries.</p>
+        <a href="16css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 17</h2>
+        <p>Demonstrate CSS transitions and transformations.</p>
+        <a href="17css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 18</h2>
+        <p>Create CSS animations.</p>
+        <a href="18css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 19</h2>
+        <p>Create a responsive navigation menu.</p>
+        <a href="19css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 20</h2>
+        <p>Create a personal portfolio using CSS.</p>
+        <a href="20css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 21</h2>
+        <p>Create a college/student profile using CSS.</p>
+        <a href="21css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 22</h2>
+        <p>Create a login page using CSS.</p>
+        <a href="22css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 23</h2>
+        <p>Create a product card using CSS.</p>
+        <a href="23css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 24</h2>
+        <p>Create a responsive photo gallery.</p>
+        <a href="24css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 25</h2>
+        <p>Create a complete website homepage using CSS.</p>
+        <a href="25css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 26</h2>
+        <p>Demonstrate CSS inheritance and specificity.</p>
+        <a href="26css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 27</h2>
+        <p>Demonstrate universal, element, class, ID, attribute and grouping selectors.</p>
+        <a href="27css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 28</h2>
+        <p>Demonstrate descendant, child, adjacent sibling and general sibling selectors.</p>
+        <a href="28css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 29</h2>
+        <p>Demonstrate CSS variables.</p>
+        <a href="29css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 30</h2>
+        <p>Demonstrate background images and positioning.</p>
+        <a href="30css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 31</h2>
+        <p>Demonstrate linear and radial gradients.</p>
+        <a href="31css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 32</h2>
+        <p>Demonstrate box-shadow and text-shadow.</p>
+        <a href="32css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 33</h2>
+        <p>Create shapes using border-radius.</p>
+        <a href="33css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 34</h2>
+        <p>Demonstrate opacity and transparency.</p>
+        <a href="34css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 35</h2>
+        <p>Demonstrate overflow properties.</p>
+        <a href="35css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 36</h2>
+        <p>Demonstrate z-index and stacking.</p>
+        <a href="36css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 37</h2>
+        <p>Demonstrate block, inline, inline-block and none display values.</p>
+        <a href="37css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 38</h2>
+        <p>Demonstrate visibility and hiding elements.</p>
+        <a href="38css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 39</h2>
+        <p>Create a dropdown menu.</p>
+        <a href="39css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 40</h2>
+        <p>Create an image hover effect.</p>
+        <a href="40css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 41</h2>
+        <p>Create a tooltip using CSS.</p>
+        <a href="41css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 42</h2>
+        <p>Create a CSS-only button hover animation.</p>
+        <a href="42css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 43</h2>
+        <p>Demonstrate CSS filters such as blur, grayscale, brightness and contrast.</p>
+        <a href="43css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 44</h2>
+        <p>Demonstrate object-fit and object-position.</p>
+        <a href="44css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 45</h2>
+        <p>Create a responsive image gallery.</p>
+        <a href="45css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 46</h2>
+        <p>Create a card layout using Flexbox.</p>
+        <a href="46css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 47</h2>
+        <p>Create a dashboard using CSS Grid.</p>
+        <a href="47css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 48</h2>
+        <p>Create a two-column layout using CSS Grid.</p>
+        <a href="48css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 49</h2>
+        <p>Create a three-column layout using Flexbox.</p>
+        <a href="49css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 50</h2>
+        <p>Create a sticky header.</p>
+        <a href="50css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 51</h2>
+        <p>Create a fixed sidebar.</p>
+        <a href="51css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 52</h2>
+        <p>Create a responsive footer.</p>
+        <a href="52css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 53</h2>
+        <p>Create a responsive login and signup page.</p>
+        <a href="53css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 54</h2>
+        <p>Create a responsive contact form.</p>
+        <a href="54css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 55</h2>
+        <p>Create a responsive college homepage.</p>
+        <a href="55css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 56</h2>
+        <p>Create a restaurant webpage.</p>
+        <a href="56css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 57</h2>
+        <p>Create an online shopping webpage.</p>
+        <a href="57css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 58</h2>
+        <p>Create a travel homepage.</p>
+        <a href="58css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 59</h2>
+        <p>Create a news/blog layout using CSS Grid.</p>
+        <a href="59css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 60</h2>
+        <p>Create a portfolio with multiple sections.</p>
+        <a href="60css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 61</h2>
+        <p>Demonstrate Grid template areas.</p>
+        <a href="61css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 62</h2>
+        <p>Demonstrate Flexbox alignment and order.</p>
+        <a href="62css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 63</h2>
+        <p>Create a responsive Grid using media queries.</p>
+        <a href="63css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 64</h2>
+        <p>Create a mobile-first responsive webpage.</p>
+        <a href="64css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 65</h2>
+        <p>Demonstrate CSS transitions.</p>
+        <a href="65css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 66</h2>
+        <p>Demonstrate 2D and 3D transformations.</p>
+        <a href="66css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 67</h2>
+        <p>Create animations using CSS keyframes.</p>
+        <a href="67css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 68</h2>
+        <p>Create a loading spinner using CSS.</p>
+        <a href="68css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 69</h2>
+        <p>Create a sliding image or card animation.</p>
+        <a href="69css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 70</h2>
+        <p>Create a CSS-only modal or popup.</p>
+        <a href="70css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 71</h2>
+        <p>Create a dark mode using CSS variables.</p>
+        <a href="71css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 72</h2>
+        <p>Demonstrate responsive typography.</p>
+        <a href="72css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 73</h2>
+        <p>Demonstrate clamp(), min() and max().</p>
+        <a href="73css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 74</h2>
+        <p>Demonstrate the CSS calc() function.</p>
+        <a href="74css.html" class="btn">Open Program</a>
+    </div>
+
+    <div class="program">
+        <h2>Experiment 75</h2>
+        <p>
+            Create a complete responsive website using HTML5,
+            CSS3, Flexbox, Grid and media queries.
+        </p>
+        <a href="75css.html" class="btn">Open Program</a>
+    </div>
+
 </div>
-
-<script>
-    // Complete data collection of all 434 questions
-    const questionsData = [
-        // HTML Programs (15)
-        { id: "HTML-01", cat: "html", title: "Create a basic HTML webpage using headings, paragraphs, and line breaks." },
-        { id: "HTML-02", cat: "html", title: "Create an HTML page containing ordered, unordered, and description lists." },
-        { id: "HTML-03", cat: "html", title: "Create a webpage using tables with rows, columns, borders, and merged cells." },
-        { id: "HTML-04", cat: "html", title: "Create an HTML page containing images and hyperlinks." },
-        { id: "HTML-05", cat: "html", title: "Create a student registration form using HTML form elements." },
-        { id: "HTML-06", cat: "html", title: "Create a webpage using audio and video elements." },
-        { id: "HTML-07", cat: "html", title: "Create a webpage using frames/iframes." },
-        { id: "HTML-08", cat: "html", title: "Create an HTML page demonstrating semantic elements such as header, nav, section, article, and footer." },
-        { id: "HTML-09", cat: "html", title: "Create a webpage using HTML5 input types such as email, date, number, and password." },
-        { id: "HTML-10", cat: "html", title: "Create a college timetable using an HTML table." },
-        { id: "HTML-11", cat: "html", title: "Create a webpage with internal and external CSS styling." },
-        { id: "HTML-12", cat: "html", title: "Create a webpage demonstrating CSS selectors, colors, fonts, margins, padding, and borders." },
-        { id: "HTML-13", cat: "html", title: "Create a responsive webpage using CSS media queries." },
-        { id: "HTML-14", cat: "html", title: "Create a webpage using Bootstrap components." },
-        { id: "HTML-15", cat: "html", title: "Create a simple personal portfolio webpage using HTML and CSS." },
-
-        // CSS Programs (75)
-        { id: "CSS-01", cat: "css", title: "Create a webpage demonstrating inline, internal, and external CSS." },
-        { id: "CSS-02", cat: "css", title: "Create a webpage using different CSS selectors." },
-        { id: "CSS-03", cat: "css", title: "Demonstrate CSS colors, backgrounds, and borders." },
-        { id: "CSS-04", cat: "css", title: "Create a webpage demonstrating font properties and text formatting." },
-        { id: "CSS-05", cat: "css", title: "Demonstrate the CSS box model using margin, border, padding, and content." },
-        { id: "CSS-06", cat: "css", title: "Create a webpage using different width, height, and sizing properties." },
-        { id: "CSS-07", cat: "css", title: "Create a webpage demonstrating CSS positioning — static, relative, absolute, fixed, and sticky." },
-        { id: "CSS-08", cat: "css", title: "Create a webpage using float and clear properties." },
-        { id: "CSS-09", cat: "css", title: "Create a styled navigation bar using CSS." },
-        { id: "CSS-10", cat: "css", title: "Create a webpage demonstrating pseudo-classes such as :hover, :active, :focus, and :visited." },
-        { id: "CSS-11", cat: "css", title: "Create a webpage demonstrating pseudo-elements such as ::before, ::after, ::first-letter, and ::first-line." },
-        { id: "CSS-12", cat: "css", title: "Create a webpage using CSS lists and tables." },
-        { id: "CSS-13", cat: "css", title: "Create a webpage with a styled registration form using CSS." },
-        { id: "CSS-14", cat: "css", title: "Create a webpage demonstrating CSS Flexbox." },
-        { id: "CSS-15", cat: "css", title: "Create a webpage demonstrating CSS Grid layout." },
-        { id: "CSS-16", cat: "css", title: "Create a responsive webpage using CSS media queries." },
-        { id: "CSS-17", cat: "css", title: "Create a webpage demonstrating transitions and transformations." },
-        { id: "CSS-18", cat: "css", title: "Create a webpage using CSS animations." },
-        { id: "CSS-19", cat: "css", title: "Create a responsive navigation menu using HTML and CSS." },
-        { id: "CSS-20", cat: "css", title: "Design a personal portfolio webpage using HTML and CSS." },
-        { id: "CSS-21", cat: "css", title: "Design a college/student profile page using HTML and CSS." },
-        { id: "CSS-22", cat: "css", title: "Create a login page using HTML and CSS." },
-        { id: "CSS-23", cat: "css", title: "Create a product card layout using CSS." },
-        { id: "CSS-24", cat: "css", title: "Create a responsive photo gallery using CSS Grid/Flexbox." },
-        { id: "CSS-25", cat: "css", title: "Create a complete website homepage using HTML and CSS." },
-        { id: "CSS-26", cat: "css", title: "Create a webpage demonstrating CSS inheritance and specificity." },
-        { id: "CSS-27", cat: "css", title: "Demonstrate the use of universal, element, class, ID, attribute, and grouping selectors." },
-        { id: "CSS-28", cat: "css", title: "Create a webpage using combinator selectors: descendant, child, adjacent sibling, and general sibling." },
-        { id: "CSS-29", cat: "css", title: "Create a webpage demonstrating CSS variables (custom properties)." },
-        { id: "CSS-30", cat: "css", title: "Create a webpage using different background images and background positioning." },
-        { id: "CSS-31", cat: "css", title: "Demonstrate linear gradients and radial gradients using CSS." },
-        { id: "CSS-32", cat: "css", title: "Create a webpage demonstrating box-shadow and text-shadow." },
-        { id: "CSS-33", cat: "css", title: "Create a webpage using border-radius to design different shapes." },
-        { id: "CSS-34", cat: "css", title: "Demonstrate opacity and transparency using CSS." },
-        { id: "CSS-35", cat: "css", title: "Create a webpage using overflow properties." },
-        { id: "CSS-36", cat: "css", title: "Demonstrate z-index and stacking order." },
-        { id: "CSS-37", cat: "css", title: "Create a webpage using CSS display properties such as block, inline, inline-block, and none." },
-        { id: "CSS-38", cat: "css", title: "Create a webpage demonstrating visibility and hiding elements." },
-        { id: "CSS-39", cat: "css", title: "Create a dropdown menu using HTML and CSS." },
-        { id: "CSS-40", cat: "css", title: "Create an image hover effect using CSS." },
-        { id: "CSS-41", cat: "css", title: "Create a tooltip using CSS." },
-        { id: "CSS-42", cat: "css", title: "Create a webpage with a CSS-only button hover animation." },
-        { id: "CSS-43", cat: "css", title: "Create a webpage demonstrating CSS filters such as blur, grayscale, brightness, and contrast." },
-        { id: "CSS-44", cat: "css", title: "Create a webpage demonstrating object-fit and object-position." },
-        { id: "CSS-45", cat: "css", title: "Create a responsive image gallery using CSS." },
-        { id: "CSS-46", cat: "css", title: "Create a card-based layout using Flexbox." },
-        { id: "CSS-47", cat: "css", title: "Create a dashboard layout using CSS Grid." },
-        { id: "CSS-48", cat: "css", title: "Create a two-column webpage layout using CSS Grid." },
-        { id: "CSS-49", cat: "css", title: "Create a three-column webpage layout using Flexbox." },
-        { id: "CSS-50", cat: "css", title: "Create a webpage with a sticky header." },
-        { id: "CSS-51", cat: "css", title: "Create a webpage with a fixed sidebar." },
-        { id: "CSS-52", cat: "css", title: "Create a responsive footer using HTML and CSS." },
-        { id: "CSS-53", cat: "css", title: "Create a responsive login and signup page." },
-        { id: "CSS-54", cat: "css", title: "Create a responsive contact form." },
-        { id: "CSS-55", cat: "css", title: "Create a responsive college website homepage." },
-        { id: "CSS-56", cat: "css", title: "Create a restaurant webpage using HTML and CSS." },
-        { id: "CSS-57", cat: "css", title: "Create an online shopping webpage using CSS." },
-        { id: "CSS-58", cat: "css", title: "Create a travel website homepage using CSS." },
-        { id: "CSS-59", cat: "css", title: "Create a news/blog webpage layout using CSS Grid." },
-        { id: "CSS-60", cat: "css", title: "Create a portfolio website with multiple sections using HTML and CSS." },
-        { id: "CSS-61", cat: "css", title: "Create a webpage using CSS Grid template areas." },
-        { id: "CSS-62", cat: "css", title: "Demonstrate Flexbox alignment and ordering properties." },
-        { id: "CSS-63", cat: "css", title: "Create a responsive layout using CSS Grid and media queries." },
-        { id: "CSS-64", cat: "css", title: "Create a mobile-first responsive webpage." },
-        { id: "CSS-65", cat: "css", title: "Create a webpage demonstrating CSS transitions." },
-        { id: "CSS-66", cat: "css", title: "Create a webpage demonstrating 2D and 3D CSS transformations." },
-        { id: "CSS-67", cat: "css", title: "Create a webpage using keyframe animations." },
-        { id: "CSS-68", cat: "css", title: "Create a loading spinner animation using CSS." },
-        { id: "CSS-69", cat: "css", title: "Create a sliding image/card animation using CSS." },
-        { id: "CSS-70", cat: "css", title: "Create a CSS-only modal/popup design." },
-        { id: "CSS-71", cat: "css", title: "Create a dark-mode webpage using CSS variables." },
-        { id: "CSS-72", cat: "css", title: "Create a webpage demonstrating responsive typography." },
-        { id: "CSS-73", cat: "css", title: "Create a webpage using clamp(), min(), and max() CSS functions." },
-        { id: "CSS-74", cat: "css", title: "Create a webpage demonstrating CSS calc() function." },
-        { id: "CSS-75", cat: "css", title: "Create a complete responsive website using HTML5, CSS3, Flexbox, Grid, and media queries." },
-
-        // JavaScript & DOM Programs (279)
-        { id: "JS-001", cat: "js", title: "Write a JavaScript program to display 'Hello World'." },
-        { id: "JS-002", cat: "js", title: "Write a JavaScript program to perform arithmetic operations." },
-        { id: "JS-003", cat: "js", title: "Write a program to find the largest of three numbers." },
-        { id: "JS-004", cat: "js", title: "Write a program to check whether a number is even or odd." },
-        { id: "JS-005", cat: "js", title: "Write a program to check whether a number is positive, negative, or zero." },
-        { id: "JS-006", cat: "js", title: "Write a program to find the factorial of a number." },
-        { id: "JS-007", cat: "js", title: "Write a program to generate the Fibonacci series." },
-        { id: "JS-008", cat: "js", title: "Write a program to check whether a number is prime." },
-        { id: "JS-009", cat: "js", title: "Write a program to check whether a number is a palindrome." },
-        { id: "JS-010", cat: "js", title: "Write a program to reverse a number." },
-        { id: "JS-011", cat: "js", title: "Write a program to find the sum of digits of a number." },
-        { id: "JS-012", cat: "js", title: "Write a program to find the largest and smallest element in an array." },
-        { id: "JS-013", cat: "js", title: "Write a program to sort an array." },
-        { id: "JS-014", cat: "js", title: "Write a program to find the sum and average of array elements." },
-        { id: "JS-015", cat: "js", title: "Write a program to demonstrate JavaScript functions." },
-        { id: "JS-016", cat: "js", title: "Write a program using arrow functions." },
-        { id: "JS-017", cat: "js", title: "Write a program demonstrating strings and string methods." },
-        { id: "JS-018", cat: "js", title: "Write a program demonstrating arrays and array methods." },
-        { id: "JS-019", cat: "js", title: "Write a program demonstrating objects in JavaScript." },
-        { id: "JS-020", cat: "js", title: "Write a program demonstrating Date and Math objects." },
-        { id: "JS-021", cat: "js", title: "Create a webpage that changes text using JavaScript." },
-        { id: "JS-022", cat: "js", title: "Change the background color of a webpage using JavaScript." },
-        { id: "JS-023", cat: "js", title: "Create a button click event using JavaScript." },
-        { id: "JS-024", cat: "js", title: "Create a program to show/hide an HTML element." },
-        { id: "JS-025", cat: "js", title: "Create a program to change an image when a button is clicked." },
-        { id: "JS-026", cat: "js", title: "Create a digital clock using JavaScript." },
-        { id: "JS-027", cat: "js", title: "Create a simple calculator using HTML, CSS, and JavaScript." },
-        { id: "JS-028", cat: "js", title: "Create a number guessing game." },
-        { id: "JS-029", cat: "js", title: "Create a form validation program." },
-        { id: "JS-030", cat: "js", title: "Validate name, email, phone number, and password using JavaScript." },
-        { id: "JS-031", cat: "js", title: "Create a to-do list using JavaScript." },
-        { id: "JS-032", cat: "js", title: "Create a simple quiz application." },
-        { id: "JS-033", cat: "js", title: "Create a counter application with increment and decrement buttons." },
-        { id: "JS-034", cat: "js", title: "Create a stopwatch using JavaScript." },
-        { id: "JS-035", cat: "js", title: "Create a countdown timer using JavaScript." },
-        { id: "JS-036", cat: "js", title: "Demonstrate ES6 let, const, template literals, and destructuring." },
-        { id: "JS-037", cat: "js", title: "Demonstrate spread and rest operators." },
-        { id: "JS-038", cat: "js", title: "Demonstrate classes and objects." },
-        { id: "JS-039", cat: "js", title: "Demonstrate inheritance in JavaScript." },
-        { id: "JS-040", cat: "js", title: "Demonstrate callbacks, promises, and async/await." },
-        { id: "JS-041", cat: "js", title: "Fetch data from an API using Fetch API." },
-        { id: "JS-042", cat: "js", title: "Display API data dynamically on a webpage." },
-        { id: "JS-043", cat: "js", title: "Store and retrieve data using localStorage." },
-        { id: "JS-044", cat: "js", title: "Create a responsive login form with JavaScript validation." },
-        { id: "JS-045", cat: "js", title: "Create a complete interactive webpage using HTML, CSS, and JavaScript." },
-        { id: "JS-046", cat: "js", title: "Write a JavaScript program to swap two numbers." },
-        { id: "JS-047", cat: "js", title: "Write a program to find the greatest common divisor (GCD) of two numbers." },
-        { id: "JS-048", cat: "js", title: "Write a program to find the least common multiple (LCM) of two numbers." },
-        { id: "JS-049", cat: "js", title: "Write a program to check whether a number is an Armstrong number." },
-        { id: "JS-050", cat: "js", title: "Write a program to check whether a number is a perfect number." },
-        { id: "JS-051", cat: "js", title: "Write a program to generate the multiplication table of a given number." },
-        { id: "JS-052", cat: "js", title: "Write a program to calculate the power of a number." },
-        { id: "JS-053", cat: "js", title: "Write a program to count the number of digits in a number." },
-        { id: "JS-054", cat: "js", title: "Write a program to find the second-largest element in an array." },
-        { id: "JS-055", cat: "js", title: "Write a program to remove duplicate elements from an array." },
-        { id: "JS-056", cat: "js", title: "Write a program to merge two arrays." },
-        { id: "JS-057", cat: "js", title: "Write a program to find the frequency of each element in an array." },
-        { id: "JS-058", cat: "js", title: "Write a program to find common elements in two arrays." },
-        { id: "JS-059", cat: "js", title: "Write a program to reverse a string." },
-        { id: "JS-060", cat: "js", title: "Write a program to check whether a string is a palindrome." },
-        { id: "JS-061", cat: "js", title: "Write a program to count vowels and consonants in a string." },
-        { id: "JS-062", cat: "js", title: "Write a program to count the number of words in a string." },
-        { id: "JS-063", cat: "js", title: "Write a program to find the frequency of characters in a string." },
-        { id: "JS-064", cat: "js", title: "Write a program to demonstrate regular expressions in JavaScript." },
-        { id: "JS-065", cat: "js", title: "Write a program to validate an email address using a regular expression." },
-        { id: "JS-066", cat: "js", title: "Create a webpage and use JavaScript to add new elements dynamically." },
-        { id: "JS-067", cat: "js", title: "Create a program to remove HTML elements dynamically." },
-        { id: "JS-068", cat: "js", title: "Create a program to change CSS styles using JavaScript." },
-        { id: "JS-069", cat: "js", title: "Create a program to change multiple HTML elements simultaneously." },
-        { id: "JS-070", cat: "js", title: "Demonstrate getElementById() and getElementsByClassName()." },
-        { id: "JS-071", cat: "js", title: "Demonstrate querySelector() and querySelectorAll()." },
-        { id: "JS-072", cat: "js", title: "Create a program to create and remove CSS classes dynamically." },
-        { id: "JS-073", cat: "js", title: "Create a dynamic table using JavaScript." },
-        { id: "JS-074", cat: "js", title: "Create a program to add and delete rows from a table." },
-        { id: "JS-075", cat: "js", title: "Create a program to search/filter table records." },
-        { id: "JS-076", cat: "js", title: "Create a live character counter for a textarea." },
-        { id: "JS-077", cat: "js", title: "Create a password show/hide feature." },
-        { id: "JS-078", cat: "js", title: "Create a dynamic dropdown list." },
-        { id: "JS-079", cat: "js", title: "Create a dependent dropdown such as Country -> State -> City." },
-        { id: "JS-080", cat: "js", title: "Create an image slideshow/carousel using JavaScript." },
-        { id: "JS-081", cat: "js", title: "Demonstrate mouse events using JavaScript." },
-        { id: "JS-082", cat: "js", title: "Demonstrate keyboard events using JavaScript." },
-        { id: "JS-083", cat: "js", title: "Demonstrate form events such as submit, change, focus, and blur." },
-        { id: "JS-084", cat: "js", title: "Create a webpage that responds to double-click events." },
-        { id: "JS-085", cat: "js", title: "Create a program using event bubbling and event capturing." },
-        { id: "JS-086", cat: "js", title: "Demonstrate event delegation." },
-        { id: "JS-087", cat: "js", title: "Create a keyboard-controlled webpage/game." },
-        { id: "JS-088", cat: "js", title: "Create a drag-and-drop application using JavaScript." },
-        { id: "JS-089", cat: "js", title: "Create a student registration form with JavaScript validation." },
-        { id: "JS-090", cat: "js", title: "Create a login form with username and password validation." },
-        { id: "JS-091", cat: "js", title: "Create a password strength checker." },
-        { id: "JS-092", cat: "js", title: "Create a signup form with password confirmation." },
-        { id: "JS-093", cat: "js", title: "Create a feedback form with validation." },
-        { id: "JS-094", cat: "js", title: "Create a college admission form with JavaScript validation." },
-        { id: "JS-095", cat: "js", title: "Display validation error messages dynamically without reloading the page." },
-        { id: "JS-096", cat: "js", title: "Demonstrate the Window object." },
-        { id: "JS-097", cat: "js", title: "Demonstrate the Navigator object." },
-        { id: "JS-098", cat: "js", title: "Demonstrate the Location object." },
-        { id: "JS-099", cat: "js", title: "Demonstrate the History object." },
-        { id: "JS-100", cat: "js", title: "Create a program using localStorage." },
-        { id: "JS-101", cat: "js", title: "Create a program using sessionStorage." },
-        { id: "JS-102", cat: "js", title: "Create a shopping cart using localStorage." },
-        { id: "JS-103", cat: "js", title: "Create a theme switcher (light/dark mode) using localStorage." },
-        { id: "JS-104", cat: "js", title: "Create a digital calculator." },
-        { id: "JS-105", cat: "js", title: "Create a digital clock." },
-        { id: "JS-106", cat: "js", title: "Create a stopwatch." },
-        { id: "JS-107", cat: "js", title: "Create a countdown timer." },
-        { id: "JS-108", cat: "js", title: "Create a to-do list application." },
-        { id: "JS-109", cat: "js", title: "Create a weather application using an API." },
-        { id: "JS-110", cat: "js", title: "Create a quiz application." },
-        { id: "JS-111", cat: "js", title: "Create a number guessing game." },
-        { id: "JS-112", cat: "js", title: "Create a tic-tac-toe game." },
-        { id: "JS-113", cat: "js", title: "Create a simple expense tracker." },
-        { id: "JS-114", cat: "js", title: "Create a student marks/grade calculator." },
-        { id: "JS-115", cat: "js", title: "Create a simple shopping cart." },
-        { id: "JS-116", cat: "js", title: "Create a notes application using localStorage." },
-        { id: "JS-117", cat: "js", title: "Create a random password generator." },
-        { id: "JS-118", cat: "js", title: "Create a BMI calculator." },
-        { id: "JS-119", cat: "js", title: "Create a currency converter using an API." },
-        { id: "JS-120", cat: "js", title: "Create a complete interactive portfolio website using HTML, CSS, and JavaScript." },
-        { id: "JS-121", cat: "js", title: "Change the text content of an HTML element using JavaScript." },
-        { id: "JS-122", cat: "js", title: "Change the HTML content of an element using innerHTML." },
-        { id: "JS-123", cat: "js", title: "Change the style of an HTML element dynamically." },
-        { id: "JS-124", cat: "js", title: "Change the background color of an element when a button is clicked." },
-        { id: "JS-125", cat: "js", title: "Create a new HTML element dynamically and add it to the webpage." },
-        { id: "JS-126", cat: "js", title: "Remove an existing HTML element dynamically." },
-        { id: "JS-127", cat: "js", title: "Replace an existing HTML element with a new element." },
-        { id: "JS-128", cat: "js", title: "Add and remove CSS classes using JavaScript." },
-        { id: "JS-129", cat: "js", title: "Toggle a CSS class using JavaScript." },
-        { id: "JS-130", cat: "js", title: "Change the attributes of an HTML element dynamically." },
-        { id: "JS-131", cat: "js", title: "Create a dynamic unordered list from an array." },
-        { id: "JS-132", cat: "js", title: "Create a dynamic ordered list from user input." },
-        { id: "JS-133", cat: "js", title: "Create a dynamic student table using JavaScript." },
-        { id: "JS-134", cat: "js", title: "Add new rows to an HTML table dynamically." },
-        { id: "JS-135", cat: "js", title: "Delete a selected row from an HTML table." },
-        { id: "JS-136", cat: "js", title: "Edit table data dynamically." },
-        { id: "JS-137", cat: "js", title: "Create a searchable/filterable table." },
-        { id: "JS-138", cat: "js", title: "Sort table records using JavaScript." },
-        { id: "JS-139", cat: "js", title: "Create a dynamic dropdown menu using JavaScript." },
-        { id: "JS-140", cat: "js", title: "Add options dynamically to a <select> element." },
-        { id: "JS-141", cat: "js", title: "Create a dependent dropdown — Country -> State -> City." },
-        { id: "JS-142", cat: "js", title: "Create an image gallery dynamically from an array of image data." },
-        { id: "JS-143", cat: "js", title: "Create an image slideshow using DOM manipulation." },
-        { id: "JS-144", cat: "js", title: "Create a show/hide password feature." },
-        { id: "JS-145", cat: "js", title: "Create a show/hide content button." },
-        { id: "JS-146", cat: "js", title: "Create a tabs interface using DOM manipulation." },
-        { id: "JS-147", cat: "js", title: "Create an accordion using JavaScript." },
-        { id: "JS-148", cat: "js", title: "Create a modal popup using JavaScript." },
-        { id: "JS-149", cat: "js", title: "Create a tooltip dynamically." },
-        { id: "JS-150", cat: "js", title: "Create a live character counter for a textarea." },
-        { id: "JS-151", cat: "js", title: "Create a live word counter." },
-        { id: "JS-152", cat: "js", title: "Create a program to dynamically display the current date and time." },
-        { id: "JS-153", cat: "js", title: "Create a to-do list using DOM manipulation." },
-        { id: "JS-154", cat: "js", title: "Create a program to add, edit, and delete to-do items." },
-        { id: "JS-155", cat: "js", title: "Demonstrate createElement(), appendChild(), remove(), and replaceChild()." },
-        { id: "JS-156", cat: "js", title: "Demonstrate the onclick event." },
-        { id: "JS-157", cat: "js", title: "Demonstrate the ondblclick event." },
-        { id: "JS-158", cat: "js", title: "Demonstrate onmouseover and onmouseout." },
-        { id: "JS-159", cat: "js", title: "Demonstrate onmousedown and onmouseup." },
-        { id: "JS-160", cat: "js", title: "Demonstrate the onmousemove event." },
-        { id: "JS-161", cat: "js", title: "Demonstrate keyboard events using keydown." },
-        { id: "JS-162", cat: "js", title: "Demonstrate keyboard events using keyup." },
-        { id: "JS-163", cat: "js", title: "Create a webpage that displays the key pressed by the user." },
-        { id: "JS-164", cat: "js", title: "Create a program that counts the number of keyboard key presses." },
-        { id: "JS-165", cat: "js", title: "Demonstrate the focus and blur events." },
-        { id: "JS-166", cat: "js", title: "Demonstrate the change event." },
-        { id: "JS-167", cat: "js", title: "Demonstrate the input event." },
-        { id: "JS-168", cat: "js", title: "Demonstrate the submit event." },
-        { id: "JS-169", cat: "js", title: "Demonstrate the reset event." },
-        { id: "JS-170", cat: "js", title: "Create a button that changes the background color when clicked." },
-        { id: "JS-171", cat: "js", title: "Create a button that changes font size dynamically." },
-        { id: "JS-172", cat: "js", title: "Create a webpage with multiple buttons having different event handlers." },
-        { id: "JS-173", cat: "js", title: "Demonstrate event listeners using addEventListener()." },
-        { id: "JS-174", cat: "js", title: "Add multiple event listeners to a single element." },
-        { id: "JS-175", cat: "js", title: "Remove an event listener using removeEventListener()." },
-        { id: "JS-176", cat: "js", title: "Demonstrate event bubbling." },
-        { id: "JS-177", cat: "js", title: "Demonstrate event capturing." },
-        { id: "JS-178", cat: "js", title: "Demonstrate event delegation." },
-        { id: "JS-179", cat: "js", title: "Create a drag-and-drop application." },
-        { id: "JS-180", cat: "js", title: "Create a mouse coordinate tracker." },
-        { id: "JS-181", cat: "js", title: "Create a keyboard-controlled moving object." },
-        { id: "JS-182", cat: "js", title: "Create a click counter." },
-        { id: "JS-183", cat: "js", title: "Create a double-click counter." },
-        { id: "JS-184", cat: "js", title: "Create a reaction-time game." },
-        { id: "JS-185", cat: "js", title: "Create a simple keyboard typing test." },
-        { id: "JS-186", cat: "js", title: "Create a student registration form and validate all fields." },
-        { id: "JS-187", cat: "js", title: "Create a login form with username and password validation." },
-        { id: "JS-188", cat: "js", title: "Validate a name field to accept only alphabets." },
-        { id: "JS-189", cat: "js", title: "Validate an age field using JavaScript." },
-        { id: "JS-190", cat: "js", title: "Validate a mobile phone number." },
-        { id: "JS-191", cat: "js", title: "Validate an email address." },
-        { id: "JS-192", cat: "js", title: "Validate a password based on minimum length." },
-        { id: "JS-193", cat: "js", title: "Create a strong password validator." },
-        { id: "JS-194", cat: "js", title: "Validate password and confirm password fields." },
-        { id: "JS-195", cat: "js", title: "Validate a date of birth field." },
-        { id: "JS-196", cat: "js", title: "Validate a gender selection." },
-        { id: "JS-197", cat: "js", title: "Validate radio buttons." },
-        { id: "JS-198", cat: "js", title: "Validate checkbox selection." },
-        { id: "JS-199", cat: "js", title: "Validate a dropdown/select box." },
-        { id: "JS-200", cat: "js", title: "Validate a textarea." },
-        { id: "JS-201", cat: "js", title: "Create a form with required-field validation." },
-        { id: "JS-202", cat: "js", title: "Display error messages beside individual form fields." },
-        { id: "JS-203", cat: "js", title: "Display a success message after successful form submission." },
-        { id: "JS-204", cat: "js", title: "Prevent form submission when validation fails." },
-        { id: "JS-205", cat: "js", title: "Validate a form using regular expressions." },
-        { id: "JS-206", cat: "js", title: "Validate an email using a regular expression." },
-        { id: "JS-207", cat: "js", title: "Validate a phone number using a regular expression." },
-        { id: "JS-208", cat: "js", title: "Validate a password using a regular expression." },
-        { id: "JS-209", cat: "js", title: "Create a real-time form validation system." },
-        { id: "JS-210", cat: "js", title: "Validate fields using the input, change, focus, and blur events." },
-        { id: "JS-211", cat: "js", title: "Create a password strength meter." },
-        { id: "JS-212", cat: "js", title: "Create a show/hide password option." },
-        { id: "JS-213", cat: "js", title: "Create a registration form with password confirmation." },
-        { id: "JS-214", cat: "js", title: "Create a college admission form with complete validation." },
-        { id: "JS-215", cat: "js", title: "Create a job application form with validation." },
-        { id: "JS-216", cat: "js", title: "Create a feedback form with validation." },
-        { id: "JS-217", cat: "js", title: "Create a contact form with validation." },
-        { id: "JS-218", cat: "js", title: "Create a multi-step registration form." },
-        { id: "JS-219", cat: "js", title: "Create a form that displays a preview of entered information before submission." },
-        { id: "JS-220", cat: "js", title: "Create a form that calculates and displays age from date of birth." },
-        { id: "JS-221", cat: "js", title: "Create a marks entry form and calculate total, average, and grade." },
-        { id: "JS-222", cat: "js", title: "Create an employee salary form and calculate salary details." },
-        { id: "JS-223", cat: "js", title: "Create a shopping order form and calculate the total price." },
-        { id: "JS-224", cat: "js", title: "Create a form with dynamic fields based on user selection." },
-        { id: "JS-225", cat: "js", title: "Create a form that validates input and displays errors without page reload." },
-        { id: "JS-226", cat: "js", title: "Demonstrate the Window object." },
-        { id: "JS-227", cat: "js", title: "Demonstrate alert(), confirm(), and prompt()." },
-        { id: "JS-228", cat: "js", title: "Create a program using setTimeout()." },
-        { id: "JS-229", cat: "js", title: "Create a program using setInterval()." },
-        { id: "JS-230", cat: "js", title: "Create a digital clock using setInterval()." },
-        { id: "JS-231", cat: "js", title: "Create a countdown timer." },
-        { id: "JS-232", cat: "js", title: "Create a stopwatch." },
-        { id: "JS-233", cat: "js", title: "Demonstrate the Location object." },
-        { id: "JS-234", cat: "js", title: "Create a button to redirect the user to another webpage." },
-        { id: "JS-235", cat: "js", title: "Display the current webpage URL using JavaScript." },
-        { id: "JS-236", cat: "js", title: "Demonstrate the History object." },
-        { id: "JS-237", cat: "js", title: "Create buttons for Back, Forward, and Reload browser operations." },
-        { id: "JS-238", cat: "js", title: "Demonstrate the Navigator object." },
-        { id: "JS-239", cat: "js", title: "Display browser information using JavaScript." },
-        { id: "JS-240", cat: "js", title: "Display the user's screen width and height." },
-        { id: "JS-241", cat: "js", title: "Detect whether the browser is online or offline." },
-        { id: "JS-242", cat: "js", title: "Display the current browser language." },
-        { id: "JS-243", cat: "js", title: "Demonstrate browser geolocation." },
-        { id: "JS-244", cat: "js", title: "Display the user's current geographical coordinates using the Geolocation API." },
-        { id: "JS-245", cat: "js", title: "Create a webpage that updates information when the browser goes online/offline." },
-        { id: "JS-246", cat: "js", title: "Store a username using localStorage." },
-        { id: "JS-247", cat: "js", title: "Retrieve and display data from localStorage." },
-        { id: "JS-248", cat: "js", title: "Update data stored in localStorage." },
-        { id: "JS-249", cat: "js", title: "Delete an item from localStorage." },
-        { id: "JS-250", cat: "js", title: "Clear all localStorage data." },
-        { id: "JS-251", cat: "js", title: "Store multiple values using localStorage." },
-        { id: "JS-252", cat: "js", title: "Store an array in localStorage using JSON." },
-        { id: "JS-253", cat: "js", title: "Store a JavaScript object in localStorage." },
-        { id: "JS-254", cat: "js", title: "Create a student record system using localStorage." },
-        { id: "JS-255", cat: "js", title: "Create a to-do list using localStorage." },
-        { id: "JS-256", cat: "js", title: "Create a notes application using localStorage." },
-        { id: "JS-257", cat: "js", title: "Create a shopping cart using localStorage." },
-        { id: "JS-258", cat: "js", title: "Create a login preference system using localStorage." },
-        { id: "JS-259", cat: "js", title: "Create a dark/light theme switcher using localStorage." },
-        { id: "JS-260", cat: "js", title: "Save the user's preferred font size using localStorage." },
-        { id: "JS-261", cat: "js", title: "Create a recently viewed items feature using localStorage." },
-        { id: "JS-262", cat: "js", title: "Create a visitor counter using browser storage." },
-        { id: "JS-263", cat: "js", title: "Compare localStorage and sessionStorage." },
-        { id: "JS-264", cat: "js", title: "Store temporary form data using sessionStorage." },
-        { id: "JS-265", cat: "js", title: "Create a multi-page form using sessionStorage." },
-        { id: "JS-266", cat: "js", title: "Save form data automatically using localStorage." },
-        { id: "JS-267", cat: "js", title: "Restore previously entered form data after refreshing the page." },
-        { id: "JS-268", cat: "js", title: "Create a shopping cart that persists after page refresh." },
-        { id: "JS-269", cat: "js", title: "Create a student marks database using localStorage." },
-        { id: "JS-270", cat: "js", title: "Create a CRUD application using localStorage — Create, Read, Update, and Delete records." },
-        { id: "JS-271", cat: "js", title: "Create a digital calculator." },
-        { id: "JS-272", cat: "js", title: "Create a digital clock." },
-        { id: "JS-273", cat: "js", title: "Create a stopwatch." },
-        { id: "JS-274", cat: "js", title: "Create a countdown timer." },
-        { id: "JS-275", cat: "js", title: "Create a to-do list application." },
-        { id: "JS-276", cat: "js", title: "Create a weather application using an API." },
-        { id: "JS-277", cat: "js", title: "Create a quiz application." },
-        { id: "JS-278", cat: "js", title: "Create a number guessing game." },
-        { id: "JS-279", cat: "js", title: "Create a tic-tac-toe game." },
-
-        // Node.js Backend Programs (65)
-        { id: "NODE-01", cat: "node", title: "Implement a basic Client-Server Architecture using Node.js." },
-        { id: "NODE-02", cat: "node", title: "Create a basic HTTP Server using Node.js." },
-        { id: "NODE-03", cat: "node", title: "Demonstrate the Request-Response Cycle in a server-side application." },
-        { id: "NODE-04", cat: "node", title: "Create a Node.js application using built-in modules." },
-        { id: "NODE-05", cat: "node", title: "Demonstrate the File System (fs) module." },
-        { id: "NODE-06", cat: "node", title: "Demonstrate the Path (path) module." },
-        { id: "NODE-07", cat: "node", title: "Create and use custom Node.js modules." },
-        { id: "NODE-08", cat: "node", title: "Install and use packages using npm." },
-        { id: "NODE-09", cat: "node", title: "Demonstrate Callbacks, Promises, and Async/Await in Node.js." },
-        { id: "NODE-10", cat: "node", title: "Implement Error Handling in a Node.js application." },
-        { id: "NODE-11", cat: "node", title: "Create a basic Express.js application." },
-        { id: "NODE-12", cat: "node", title: "Handle GET and POST requests using Express." },
-        { id: "NODE-13", cat: "node", title: "Serve static files using Express." },
-        { id: "NODE-14", cat: "node", title: "Send HTML and JSON responses using Express." },
-        { id: "NODE-15", cat: "node", title: "Create an Express application with a modular project structure." },
-        { id: "NODE-16", cat: "node", title: "Implement basic routing using Express." },
-        { id: "NODE-17", cat: "node", title: "Implement route parameters and query parameters." },
-        { id: "NODE-18", cat: "node", title: "Create multiple routes using Express Router." },
-        { id: "NODE-19", cat: "node", title: "Implement 404 / Not Found route handling." },
-        { id: "NODE-20", cat: "node", title: "Create modular routes for users, products, or students." },
-        { id: "NODE-21", cat: "node", title: "Create and implement custom middleware." },
-        { id: "NODE-22", cat: "node", title: "Implement logging middleware." },
-        { id: "NODE-23", cat: "node", title: "Implement request validation middleware." },
-        { id: "NODE-24", cat: "node", title: "Implement authentication middleware." },
-        { id: "NODE-25", cat: "node", title: "Implement error-handling middleware." },
-        { id: "NODE-26", cat: "node", title: "Demonstrate the execution order of middleware." },
-        { id: "NODE-27", cat: "node", title: "Create and manage cookies using Express." },
-        { id: "NODE-28", cat: "node", title: "Read and delete cookies using Express." },
-        { id: "NODE-29", cat: "node", title: "Implement session management in Express." },
-        { id: "NODE-30", cat: "node", title: "Implement login and logout using sessions." },
-        { id: "NODE-31", cat: "node", title: "Create protected routes using session authentication." },
-        { id: "NODE-32", cat: "node", title: "Connect a Node.js application to a database." },
-        { id: "NODE-33", cat: "node", title: "Create and manage database tables/collections." },
-        { id: "NODE-34", cat: "node", title: "Insert data into a database using Node.js." },
-        { id: "NODE-35", cat: "node", title: "Retrieve data from a database using Node.js." },
-        { id: "NODE-36", cat: "node", title: "Update database records using Node.js." },
-        { id: "NODE-37", cat: "node", title: "Delete database records using Node.js." },
-        { id: "NODE-38", cat: "node", title: "Implement CRUD operations using Node.js and Express." },
-        { id: "NODE-39", cat: "node", title: "Create a Student Management CRUD application." },
-        { id: "NODE-40", cat: "node", title: "Create a User Management CRUD application." },
-        { id: "NODE-41", cat: "node", title: "Create a Product Management CRUD application." },
-        { id: "NODE-42", cat: "node", title: "Implement CRUD operations with database connectivity." },
-        { id: "NODE-43", cat: "node", title: "Implement input validation for CRUD operations." },
-        { id: "NODE-44", cat: "node", title: "Implement User Registration." },
-        { id: "NODE-45", cat: "node", title: "Implement User Login and Logout." },
-        { id: "NODE-46", cat: "node", title: "Implement Password Hashing." },
-        { id: "NODE-47", cat: "node", title: "Implement Password Verification." },
-        { id: "NODE-48", cat: "node", title: "Implement JWT-based Authentication." },
-        { id: "NODE-49", cat: "node", title: "Create Protected API Routes using authentication." },
-        { id: "NODE-50", cat: "node", title: "Implement Role-Based Authorization." },
-        { id: "NODE-51", cat: "node", title: "Create Admin and User roles." },
-        { id: "NODE-52", cat: "node", title: "Restrict specific routes based on user roles." },
-        { id: "NODE-53", cat: "node", title: "Implement Authorization Middleware." },
-        { id: "NODE-54", cat: "node", title: "Create a basic RESTful API using Express.js." },
-        { id: "NODE-55", cat: "node", title: "Implement a GET REST API." },
-        { id: "NODE-56", cat: "node", title: "Implement a POST REST API." },
-        { id: "NODE-57", cat: "node", title: "Implement a PUT/PATCH REST API." },
-        { id: "NODE-58", cat: "node", title: "Implement a DELETE REST API." },
-        { id: "NODE-59", cat: "node", title: "Implement proper HTTP Status Codes in REST APIs." },
-        { id: "NODE-60", cat: "node", title: "Implement API Error Handling." },
-        { id: "NODE-61", cat: "node", title: "Implement API Request Validation." },
-        { id: "NODE-62", cat: "node", title: "Test REST APIs using Postman." },
-        { id: "NODE-63", cat: "node", title: "Create a Student REST API with Database Connectivity." },
-        { id: "NODE-64", cat: "node", title: "Create a Product REST API with CRUD Operations." },
-        { id: "NODE-65", cat: "node", title: "Create a User REST API with Authentication and Authorization." }
-    ];
-
-    const categoryNames = {
-        html: { name: "HTML Experiments", badgeClass: "badge-html" },
-        css: { name: "CSS Experiments", badgeClass: "badge-css" },
-        js: { name: "JavaScript & DOM Experiments", badgeClass: "badge-js" },
-        node: { name: "Node.js Backend Experiments", badgeClass: "badge-node" }
-    };
-
-    let activeCategory = 'all';
-
-    function renderQuestions() {
-        const container = document.getElementById('questionsContainer');
-        const searchQuery = document.getElementById('searchInput').value.toLowerCase();
-        container.innerHTML = '';
-
-        const categories = ['html', 'css', 'js', 'node'];
-
-        categories.forEach(cat => {
-            if (activeCategory !== 'all' && activeCategory !== cat) return;
-
-            const filtered = questionsData.filter(q => q.cat === cat && q.title.toLowerCase().includes(searchQuery));
-
-            if (filtered.length === 0) return;
-
-            const section = document.createElement('div');
-            section.className = 'category-section';
-
-            const header = document.createElement('div');
-            header.className = 'category-header';
-            header.innerHTML = `
-                <div class="category-title">
-                    <span>${categoryNames[cat].name}</span>
-                    <span class="badge ${categoryNames[cat].badgeClass}">${filtered.length}</span>
-                </div>
-            `;
-
-            const list = document.createElement('ul');
-            list.className = 'question-list';
-
-            filtered.forEach(q => {
-                const card = document.createElement('li');
-                card.className = 'question-card';
-                card.innerHTML = `
-                    <div class="question-title"><strong>#${q.id}:</strong> ${q.title}</div>
-                    <div class="question-meta">
-                        <span>Category: ${cat.toUpperCase()}</span>
-                        <a href="${cat}/${q.id.toLowerCase()}.html" class="btn-view" onclick="alert('Navigating to program implementation: ${q.id}')">View Code & Demo</a>
-                    </div>
-                `;
-                list.appendChild(card);
-            });
-
-            section.appendChild(header);
-            section.appendChild(list);
-            container.appendChild(section);
-        });
-
-        if (container.children.length === 0) {
-            container.innerHTML = '<div style="text-align:center; padding: 2rem; color: var(--text-muted);">No matching questions found.</div>';
-        }
-    }
-
-    function filterCategory(cat, btn) {
-        activeCategory = cat;
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderQuestions();
-    }
-
-    function filterQuestions() {
-        renderQuestions();
-    }
-
-    function toggleTheme() {
-        document.body.classList.toggle('dark-mode');
-        const themeBtn = document.getElementById('themeToggle');
-        if (document.body.classList.contains('dark-mode')) {
-            themeBtn.innerText = 'Light Mode';
-        } else {
-            themeBtn.innerText = 'Dark Mode';
-        }
-    }
-
-    // Initial Render
-    renderQuestions();
-</script>
 
 </body>
 </html>

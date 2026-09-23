@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Frequency</title>
+</head>
+
+<body>
+
+    <h1>Character Frequency</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let text = "hello";
+        let frequency = {};
+
+        for (let char of text) {
+
+            if (frequency[char]) {
+                frequency[char]++;
+            } else {
+                frequency[char] = 1;
+            }
+        }
+
+        let result = "";
+
+        for (let char in frequency) {
+            result += char + " = " +
+                      frequency[char] + "<br>";
+        }
+
+        document.getElementById("output").innerHTML =
+            result;
+    </script>
+
+</body>
+</html>

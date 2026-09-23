@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display API Data</title>
+</head>
+
+<body>
+
+    <h1>API Data</h1>
+
+    <div id="output">Loading...</div>
+
+    <script>
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => response.json())
+            .then(data => {
+
+                let output = "";
+
+                data.forEach(user => {
+                    output +=
+                        "<p>Name: " + user.name +
+                        "<br>Email: " + user.email +
+                        "</p>";
+                });
+
+                document.getElementById("output").innerHTML =
+                    output;
+            })
+            .catch(error => {
+                document.getElementById("output").innerHTML =
+                    "Unable to fetch data.";
+            });
+    </script>
+
+</body>
+</html>
