@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ES6 Features</title>
+</head>
+
+<body>
+
+    <h1>ES6 Features</h1>
+
+    <p id="output"></p>
+
+    <script>
+        // let and const
+        let name = "Varshitha";
+        const age = 20;
+
+        // Template literal
+        let message = `My name is ${name} and I am ${age} years old.`;
+
+        // Destructuring
+        let student = ["Computer Science", 20];
+
+        let [course, studentAge] = student;
+
+        document.getElementById("output").innerHTML =
+            message + "<br>" +
+            "Course = " + course + "<br>" +
+            "Age = " + studentAge;
+    </script>
+
+</body>
+</html>

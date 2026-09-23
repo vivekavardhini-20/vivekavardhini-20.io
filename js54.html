@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Second Largest</title>
+</head>
+
+<body>
+
+    <h1>Second Largest Number</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let numbers = [10, 25, 40, 15, 30];
+
+        numbers.sort(function(a, b) {
+            return b - a;
+        });
+
+        let secondLargest = numbers[1];
+
+        document.getElementById("output").innerHTML =
+            "Array = " + numbers + "<br>" +
+            "Second Largest = " + secondLargest;
+    </script>
+
+</body>
+</html>

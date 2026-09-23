@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse String</title>
+</head>
+
+<body>
+
+    <h1>Reverse a String</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let text = "JavaScript";
+
+        let reversed = text.split("").reverse().join("");
+
+        document.getElementById("output").innerHTML =
+            "Original String = " + text + "<br>" +
+            "Reversed String = " + reversed;
+    </script>
+
+</body>
+</html>

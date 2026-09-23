@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spread and Rest</title>
+</head>
+
+<body>
+
+    <h1>Spread and Rest Operators</h1>
+
+    <p id="output"></p>
+
+    <script>
+        // Spread operator
+        let numbers1 = [10, 20, 30];
+
+        let numbers2 = [...numbers1, 40, 50];
+
+        // Rest operator
+        function addNumbers(...numbers) {
+
+            let sum = 0;
+
+            for (let number of numbers) {
+                sum += number;
+            }
+
+            return sum;
+        }
+
+        let result = addNumbers(10, 20, 30);
+
+        document.getElementById("output").innerHTML =
+            "Spread Array = " + numbers2 + "<br>" +
+            "Sum using Rest = " + result;
+    </script>
+
+</body>
+</html>

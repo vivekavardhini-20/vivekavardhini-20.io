@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stopwatch</title>
+</head>
+
+<body>
+
+    <h1>Stopwatch</h1>
+
+    <h2 id="time">0 seconds</h2>
+
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+
+    <script>
+        let seconds = 0;
+        let timer;
+
+        function startTimer() {
+
+            timer = setInterval(function() {
+
+                seconds++;
+
+                document.getElementById("time").innerHTML =
+                    seconds + " seconds";
+
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+
+        function resetTimer() {
+
+            clearInterval(timer);
+
+            seconds = 0;
+
+            document.getElementById("time").innerHTML =
+                "0 seconds";
+        }
+    </script>
+
+</body>
+</html>

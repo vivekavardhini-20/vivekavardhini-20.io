@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Hide Element</title>
+</head>
+
+<body>
+
+    <h1 id="message">Hello! I can be hidden.</h1>
+
+    <button onclick="hideMessage()">Hide</button>
+    <button onclick="showMessage()">Show</button>
+
+    <script>
+        function hideMessage() {
+            document.getElementById("message").style.display = "none";
+        }
+
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

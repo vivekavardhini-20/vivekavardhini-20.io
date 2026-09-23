@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regex Form Validation</title>
+</head>
+
+<body>
+
+    <h1>Form Validation Using Regex</h1>
+
+    <input type="text" id="name" placeholder="Enter name">
+
+    <br><br>
+
+    <input type="text" id="phone" placeholder="Enter 10-digit phone">
+
+    <br><br>
+
+    <button onclick="validateForm()">Validate</button>
+
+    <p id="output"></p>
+
+    <script>
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+
+            let namePattern = /^[A-Za-z ]+$/;
+            let phonePattern = /^[0-9]{10}$/;
+
+            if (!namePattern.test(name)) {
+
+                document.getElementById("output").innerHTML =
+                    "Invalid name.";
+
+                return;
+            }
+
+            if (!phonePattern.test(phone)) {
+
+                document.getElementById("output").innerHTML =
+                    "Invalid phone number.";
+
+                return;
+            }
+
+            document.getElementById("output").innerHTML =
+                "All details are valid!";
+        }
+    </script>
+
+</body>
+</html>

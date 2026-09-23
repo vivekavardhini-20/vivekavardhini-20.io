@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome</title>
+</head>
+
+<body>
+
+    <h1>Palindrome Check</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let word = "madam";
+
+        let reversed = word.split("").reverse().join("");
+
+        if (word === reversed) {
+            document.getElementById("output").innerHTML =
+                word + " is a Palindrome";
+        } else {
+            document.getElementById("output").innerHTML =
+                word + " is not a Palindrome";
+        }
+    </script>
+
+</body>
+</html>

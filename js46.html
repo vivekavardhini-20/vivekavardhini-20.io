@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swap Two Numbers</title>
+</head>
+
+<body>
+
+    <h1>Swap Two Numbers</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let a = 10;
+        let b = 20;
+
+        let temp = a;
+        a = b;
+        b = temp;
+
+        document.getElementById("output").innerHTML =
+            "After swapping:<br>" +
+            "A = " + a + "<br>" +
+            "B = " + b;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expression</title>
+</head>
+
+<body>
+
+    <h1>Regular Expression Demo</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let text = "JavaScript is a programming language.";
+
+        let pattern = /JavaScript/;
+
+        let result = pattern.test(text);
+
+        if (result) {
+            document.getElementById("output").innerHTML =
+                "Pattern found in the text.";
+        } else {
+            document.getElementById("output").innerHTML =
+                "Pattern not found.";
+        }
+    </script>
+
+</body>
+</html>

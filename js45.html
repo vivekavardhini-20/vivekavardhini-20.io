@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        #box {
+            margin: 20px auto;
+            padding: 30px;
+            width: 200px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">Interactive Webpage</h1>
+
+    <div id="box">
+        Welcome!
+    </div>
+
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="hideBox()">Hide</button>
+    <button onclick="showBox()">Show</button>
+
+    <script>
+        function changeText() {
+
+            document.getElementById("box").innerHTML =
+                "Text has been changed!";
+        }
+
+        function changeColor() {
+
+            document.getElementById("box").style.backgroundColor =
+                "lightblue";
+        }
+
+        function hideBox() {
+
+            document.getElementById("box").style.display =
+                "none";
+        }
+
+        function showBox() {
+
+            document.getElementById("box").style.display =
+                "block";
+        }
+    </script>
+
+</body>
+</html>

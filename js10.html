@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Number</title>
+</head>
+
+<body>
+
+    <h1>Reverse a Number</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let number = 12345;
+
+        let reversed = number
+            .toString()
+            .split("")
+            .reverse()
+            .join("");
+
+        document.getElementById("output").innerHTML =
+            "Original Number = " + number + "<br>" +
+            "Reversed Number = " + reversed;
+    </script>
+
+</body>
+</html>

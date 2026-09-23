@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd</title>
+</head>
+
+<body>
+
+    <h1>Even or Odd</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let number = 12;
+
+        if (number % 2 === 0) {
+            document.getElementById("output").innerHTML =
+                number + " is Even";
+        } else {
+            document.getElementById("output").innerHTML =
+                number + " is Odd";
+        }
+    </script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>GCD</title>
+</head>
+
+<body>
+
+    <h1>GCD of Two Numbers</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let a = 24;
+        let b = 36;
+
+        let x = a;
+        let y = b;
+
+        while (y !== 0) {
+
+            let remainder = x % y;
+
+            x = y;
+            y = remainder;
+        }
+
+        document.getElementById("output").innerHTML =
+            "GCD of " + a + " and " + b + " = " + x;
+    </script>
+
+</body>
+</html>
